@@ -1,5 +1,5 @@
 {% set name = "pycollo" %}
-{% set version = "0.1.5" %}
+{% set version = "0.1.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pycollo-{{ version }}.tar.gz
-  sha256: db2159a37bb6b28116e166e95739e6d74c3c123b4406be2dbfe9177ba3ad3ac0
+  sha256: 587a3fc4f0913c56af9409b33ae88bce848b2ba495866588233e15686cb37bd8
 
 build:
   number: 0
