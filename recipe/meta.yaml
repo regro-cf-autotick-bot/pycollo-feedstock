@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pycollo-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pycollo-{{ version }}.tar.gz
   sha256: 587a3fc4f0913c56af9409b33ae88bce848b2ba495866588233e15686cb37bd8
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     - {{ PYTHON }} -m pip install . -vv
@@ -18,7 +18,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools-scm >=3
   run:
     - casadi >=3.5.5
@@ -26,11 +26,13 @@ requirements:
     - numba >=0.51.2
     - numpy >=1.19.1
     - pyproprop >=0.4.10
-    - python >=3.7
+    - python >={{ python_min }}
     - scipy >=1.5.2
     - sympy >=1.6.2
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pycollo
 
